@@ -35,14 +35,14 @@ public class FirstRestController {
         return ResponseEntity.created(null).build();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("Suggestions/{id}")
     public ResponseEntity<?> helloApiDelete(@PathVariable("id") Integer id) {
         System.out.println("DELETE: Passou pelo FirstRestController");
         System.out.println("Recebido ID: " + id);
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/Suggestions/{id}")
     public ResponseEntity<?> helloApiPut(@PathVariable("id") Integer id, @RequestBody Suggestion suggestion) {
         System.out.println("PUT: Passou pelo FirstRestController");
         System.out.println("Recebido ID: " + id);
@@ -54,7 +54,7 @@ public class FirstRestController {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping("/all")
+    @GetMapping("/Suggestions")
     public ResponseEntity<List<Suggestion>> getAll() {
         List<Suggestion> all = Arrays.asList(
                 new Suggestion(1, "First Suggestion", LocalDate.of(2019, 5, 12)),
